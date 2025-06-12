@@ -4,7 +4,7 @@ Revix envisions a decentralized infrastructure that allows content creators—pa
 
 **Core Concept:**
 
-The system leverages OAuth authentication and YouTube’s API to verify content ownership and revenue metrics, then signs and stores this data on-chain through a smart contract. By binding the authenticated YouTube account to a Web3 wallet, the system establishes a provable link between off-chain IP and on-chain identity. This allows creators to register content as verifiable digital assets on the Story network.
+The system leverages OAuth authentication and YouTube’s API to verify content ownership and revenue metrics, then signs and stores this data on-chain through a smart contract. By binding the authenticated YouTube account to a Web3 wallet, the system establishes a provable link between off-chain IP and on-chain identity. This allows creators to register content as verifiable digital assets on the [Story](https://www.story.foundation/) blockchain network.
 
 **Why It Matters:**
 
