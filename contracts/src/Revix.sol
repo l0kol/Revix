@@ -4,6 +4,9 @@ pragma solidity ^0.8.26;
 import { ISPGNFT } from "@storyprotocol/periphery/interfaces/ISPGNFT.sol";
 import { IRegistrationWorkflows } from "@storyprotocol/periphery/interfaces/workflows/IRegistrationWorkflows.sol";
 import { WorkflowStructs } from "@storyprotocol/periphery/lib/WorkflowStructs.sol";
+import "@openzeppelin/contracts/utils/cryptography/MessageHashUtils.sol";
+import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+
 
 contract Revix {
     using ECDSA for bytes32;
@@ -15,9 +18,10 @@ contract Revix {
     address public trustedSigner;  // Backend/server signing address
 
     mapping(address => ISPGNFT) public creatorCollections;
+    mapping(bytes32 => bool) public ipRegistered;
 
     event CollectionCreated(address indexed creator, address collection);
-    event IpRegistered(address indexed creator, address ipId, uint256 tokenId, address recipient);
+    event IpRegistered(address indexed creator, address ipId, uint256 tokenId);
 
     modifier onlyOwner() {
         require(msg.sender == owner, "Not owner");
@@ -39,14 +43,14 @@ contract Revix {
         address creator,
         string calldata name,
         string calldata symbol,
-        uint256 maxSupply,
+        uint32 maxSupply,
         bytes calldata signature
     ) external returns (address collectionAddress) {
         require(address(creatorCollections[creator]) == address(0), "Collection exists");
 
         // Recreate the signed message hash
         bytes32 messageHash = keccak256(abi.encodePacked(creator, name, symbol, maxSupply, address(this)));
-        bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
+        bytes32 ethSignedMessageHash = MessageHashUtils.toEthSignedMessageHash(messageHash);
 
         // Recover signer from signature
         address signer = ethSignedMessageHash.recover(signature);
@@ -74,7 +78,6 @@ contract Revix {
 
     /// @notice Verify signature and register IP for creator if valid
     /// @param creator Creator address whose collection is used
-    /// @param recipient Recipient of the minted NFT and IP ownership
     /// @param ipMetadataURI URI for IP metadata
     /// @param ipMetadataHash Hash of the IP metadata
     /// @param nftMetadataURI URI for NFT metadata
@@ -82,18 +85,18 @@ contract Revix {
     /// @param signature Signature from trusted backend authorizing this registration
     function registerIpForCreatorWithSig(
         address creator,
-        address recipient,
         string calldata ipMetadataURI,
         bytes32 ipMetadataHash,
         string calldata nftMetadataURI,
         bytes32 nftMetadataHash,
         bytes calldata signature
     ) external returns (address ipId, uint256 tokenId) {
+        require(!ipRegistered[ipMetadataHash], "IP already registered");
+        
         // Recreate the signed message hash (include contract address to prevent replay)
         bytes32 messageHash = keccak256(
             abi.encodePacked(
                 creator,
-                recipient,
                 ipMetadataURI,
                 ipMetadataHash,
                 nftMetadataURI,
@@ -102,7 +105,7 @@ contract Revix {
             )
         );
 
-        bytes32 ethSignedMessageHash = messageHash.toEthSignedMessageHash();
+        bytes32 ethSignedMessageHash = MessageHashUtils.toEthSignedMessageHash(messageHash);
 
         // Recover signer address from signature
         address signer = ethSignedMessageHash.recover(signature);
@@ -120,11 +123,11 @@ contract Revix {
 
         (ipId, tokenId) = REGISTRATION_WORKFLOWS.mintAndRegisterIp(
             address(spgNft),
-            recipient,
+            creator,
             ipMetadata,
             true
         );
-
-        emit IpRegistered(creator, ipId, tokenId, recipient);
+        ipRegistered[ipMetadataHash] = true;
+        emit IpRegistered(creator, ipId, tokenId);
     }
 }
