@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Revix - README
 
 ## Project Overview
@@ -26,6 +27,34 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 ## Core Features
 
 1. **Web2-Linked Ownership Verification**  
+=======
+## Project Overview
+
+Revix is a decentralized platform designed to empower content creators—especially YouTube creators—to tokenize their intellectual property (IP) and prove ownership and revenue transparently on-chain. By bridging Web2 platforms like YouTube with Web3 blockchain ecosystems, Revix enables creators to unlock new financial opportunities such as collateralized lending, fractional ownership, and revenue sharing.
+
+---
+
+## Motivation
+
+Many small and mid-sized content creators struggle to access capital because their digital content, despite generating revenue, lacks verifiable collateral value. Today, ownership and revenue data are siloed within centralized platforms, making it nearly impossible to use digital content as real-world assets (RWAs) in decentralized finance.
+
+Revix addresses this gap by providing a trust-minimized, cryptographically verifiable system that links YouTube accounts to blockchain wallets, verifies content ownership, and attests to real revenue streams.
+
+---
+
+## Key Problems Addressed
+
+- Ownership Verification: How to prove that a creator actually controls the content they want to tokenize.
+- Revenue Verification: How to prove that the content generates real revenue through trusted platforms like YouTube.
+- Data Portability: How to make ownership and revenue data verifiable and portable on-chain.
+- Fraud Prevention: How to prevent fake revenue claims or false ownership assertions.
+
+---
+
+## Core Features
+
+1. Web2-Linked Ownership Verification  
+>>>>>>> f1f4045 (Server code update)
    - Uses OAuth 2.0 to authenticate creators via their Google accounts linked to YouTube channels.  
    - Confirms that a video URL belongs to the authenticated YouTube channel via YouTube Data API.  
    - Creator signs an approval with their Web3 wallet, cryptographically binding YouTube ownership to blockchain identity.
@@ -95,7 +124,6 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 - Enhance user experience with real-time dashboards and advanced analytics.
 
 ---
-
 
 
 ## References
