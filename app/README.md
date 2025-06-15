@@ -1,3 +1,11 @@
+**Prerequisites:**  Node.js
+
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key (to generate mock data)
+3. Run the app:
+   `npm run dev`
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
