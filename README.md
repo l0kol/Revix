@@ -1,5 +1,3 @@
-# Revix - README
-
 ## Project Overview
 
 **Revix** is a decentralized platform designed to empower content creators on YouTube to tokenize their intellectual property (IP) and prove ownership and revenue transparently on-chain. By bridging a Web2 platform like YouTube with Web3 blockchain ecosystems, Revix enables creators to unlock new financial opportunities of monetization, funding, fractional ownership and revenue sharing.

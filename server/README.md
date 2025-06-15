@@ -8,7 +8,7 @@ The server exposes three GET API endpoints that accept specific query parameters
 - Create a `.env` file with your Ethereum private key:
 
 ```
-PRIVATE_KEY=your_ethereum_private_key_here
+PRIVATE_KEY=private_key_here
 ```
 
 Install dependencies:
