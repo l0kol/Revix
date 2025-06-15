@@ -1,4 +1,4 @@
-Revix Frontend
+# Revix Frontend
 
 This is the frontend for the Revix platform, built with React, TypeScript, and Vite. It allows content creators to connect their YouTube accounts to the front end, create a Tomo wallet, and register their videos on the Story network as IPs.
 
