@@ -79,6 +79,8 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 
 ---
 
+[Video](https://imgur.com/QVIi8Aw)
+
 ## Why Revix Matters
 
 - **For Creators:** Unlock the financial value of digital content by proving ownership and revenue transparently.  
