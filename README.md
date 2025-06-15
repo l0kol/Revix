@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Revix - README
 
 ## Project Overview
@@ -27,34 +26,6 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 ## Core Features
 
 1. **Web2-Linked Ownership Verification**  
-=======
-## Project Overview
-
-Revix is a decentralized platform designed to empower content creators—especially YouTube creators—to tokenize their intellectual property (IP) and prove ownership and revenue transparently on-chain. By bridging Web2 platforms like YouTube with Web3 blockchain ecosystems, Revix enables creators to unlock new financial opportunities such as collateralized lending, fractional ownership, and revenue sharing.
-
----
-
-## Motivation
-
-Many small and mid-sized content creators struggle to access capital because their digital content, despite generating revenue, lacks verifiable collateral value. Today, ownership and revenue data are siloed within centralized platforms, making it nearly impossible to use digital content as real-world assets (RWAs) in decentralized finance.
-
-Revix addresses this gap by providing a trust-minimized, cryptographically verifiable system that links YouTube accounts to blockchain wallets, verifies content ownership, and attests to real revenue streams.
-
----
-
-## Key Problems Addressed
-
-- Ownership Verification: How to prove that a creator actually controls the content they want to tokenize.
-- Revenue Verification: How to prove that the content generates real revenue through trusted platforms like YouTube.
-- Data Portability: How to make ownership and revenue data verifiable and portable on-chain.
-- Fraud Prevention: How to prevent fake revenue claims or false ownership assertions.
-
----
-
-## Core Features
-
-1. Web2-Linked Ownership Verification  
->>>>>>> f1f4045 (Server code update)
    - Uses OAuth 2.0 to authenticate creators via their Google accounts linked to YouTube channels.  
    - Confirms that a video URL belongs to the authenticated YouTube channel via YouTube Data API.  
    - Creator signs an approval with their Web3 wallet, cryptographically binding YouTube ownership to blockchain identity.
@@ -81,14 +52,14 @@ Revix addresses this gap by providing a trust-minimized, cryptographically verif
 - User connects their Web3 wallet through a social login wallet provider Tomo, creating an MPC wallet linked to their Google identity.
 
 ### Step 2: IP registration 
-- The app fetches all the YouTube videos that belong to the authenticated channel.
+- The app fetches all the YouTube videos that belongs to the authenticated channel.
 - User selects YouTube video for IP registration.  
 - User signs a cryptographic approval with their wallet.  
 - This approval, along with video metadata, is sent to a smart contract on Story Protocol, registering the IP on-chain.
 
 ### Step 3: Revenue Proof Generation  
-- The app fetches monetization data (ad revenue, memberships) from YouTube API and royalties/revenue from licenses and derivatives on Story Protocol.
-- Revenue data is hashed and stored on-chain as proof of income. 
+- The app fetches monetization data (ad revenue, memberships) from YouTube API and royalties/revenue form licenses and derivatives on Story Protocol.
+- Revenue data is hashed and stored on-chain as proof of income.  
 - This enables transparent revenue sharing and investor confidence.
 
 ### Step 4: Financial Use Cases  
@@ -96,7 +67,8 @@ Revix addresses this gap by providing a trust-minimized, cryptographically verif
 - Tokens from previous IPs can be staked as collateral to incentivize creators to honor revenue sharing.  
 - Investors receive automated royalty payouts based on on-chain revenue proofs.
 
----
+
+![Workflow](assets/RevixUserflow2.png)
 
 ## Technical Architecture
 
@@ -126,11 +98,12 @@ Revix addresses this gap by providing a trust-minimized, cryptographically verif
 ---
 
 
+
 ## References
 
 - [YouTube Data API OAuth Guide](https://developers.google.com/youtube/v3/guides/authentication)  
-- [Story Protocol Documentation](https://www.story.foundation/)
-- [Tomo Wallet MPC Social Login](https://tomo.inc/) 
+- [Story Protocol Documentation](https://storyprotocol.com)  
+- [Tomo Wallet MPC Social Login](https://tomo.io)  
 
 
 
