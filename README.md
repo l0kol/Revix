@@ -79,7 +79,8 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 
 ---
 
-[Video](https://imgur.com/QVIi8Aw)
+[Video of app](https://i.imgur.com/QVIi8Aw.mp4)
+
 
 ## Why Revix Matters
 
