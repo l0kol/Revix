@@ -1,14 +1,29 @@
-# Run and deploy your AI Studio app
+Revix Frontend
 
-This contains everything you need to run your app locally.
+This is the frontend for the Revix platform, built with React, TypeScript, and Vite. It allows content creators to connect their YouTube accounts to the front end, create a Tomo wallet, and register their videos on the Story network as IPs.
 
-## Run Locally
+Features
 
-**Prerequisites:**  Node.js
+* Create a Tomo Wallet: Use a decentralized, MPC-based social login wallet for seamless Web3 onboarding. You can login via Google, telegram, X etc.
 
+* Connect YouTube Account: Link your YouTube account via OAuth to fetch your videos and verify ownership.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+* Video Registration on Story Protocol: Register videos on the Story Protocol blockchain, cryptographically linking YouTube content to a verified Web3 identity.
+
+Prerequisites
+
+   * Node.js
+
+Running Locally
+
+* Clone this repository and navigate into the app folder.
+
+* Install dependencies:
+
+   * npm install
+
+   * Set your GOOGLE CLOUD Project ID and Tomo Project ID into an .env file preferably. 
+
+Start the development server:
+
+* npm run dev
