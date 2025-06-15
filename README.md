@@ -101,8 +101,8 @@ Revix addresses this gap by providing a **trustworthy, cryptographically verifia
 ## References
 
 - [YouTube Data API OAuth Guide](https://developers.google.com/youtube/v3/guides/authentication)  
-- [Story Protocol Documentation](https://storyprotocol.com)  
-- [Tomo Wallet MPC Social Login](https://tomo.io)  
+- [Story Protocol Documentation](https://www.story.foundation/)
+- [Tomo Wallet MPC Social Login](https://tomo.inc/) 
 
 
 
